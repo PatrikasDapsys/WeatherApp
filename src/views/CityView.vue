@@ -9,7 +9,12 @@
     </div>
   </div> -->
   <div class="">
-    <AsyncCityView />
+    <Suspense>
+      <AsyncCityView />
+      <template #fallback>
+        <p>Loading...</p>
+      </template>
+    </Suspense>
   </div>
 </template>
 
