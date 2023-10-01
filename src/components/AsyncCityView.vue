@@ -124,7 +124,6 @@ const getWeatherData = async () => {
       const utc = hour.dt * 1000 + localOffset;
       hour.currentTime = utc + 1000 * weatherData.data.timezone_offset;
     });
-    console.log(weatherData.data);
     return weatherData.data;
   } catch (error) {
     console.log(error);

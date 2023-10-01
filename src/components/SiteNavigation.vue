@@ -70,10 +70,8 @@ const toggleModal = () => {
   modalActive.value = !modalActive.value;
 };
 const addCity = () => {
-  console.log("savedCities = ", savedCities.value);
-  console.log("addCity");
-  if (localStorage.getItem("savedCities")) {
-    savedCities.value = JSON.parse(localStorage.getItem("savedCities"));
+  if (localStorage.getItem("saved-cities")) {
+    savedCities.value = JSON.parse(localStorage.getItem("saved-cities"));
   }
   const location = {
     id: uid(),
@@ -85,7 +83,7 @@ const addCity = () => {
     },
   };
   savedCities.value.push(location);
-  localStorage.setItem("savedCity", JSON.stringify(savedCities));
+  localStorage.setItem("saved-cities", JSON.stringify(savedCities.value));
 
   let query = Object.assign({}, route.query);
   delete query.preview;
