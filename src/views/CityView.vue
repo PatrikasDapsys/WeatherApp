@@ -1,10 +1,9 @@
 <template>
-
   <div class="">
     <Suspense>
       <AsyncCityView />
       <template #fallback>
-        <p>Loading...</p>
+        <CityViewSkeleton />
       </template>
     </Suspense>
   </div>
@@ -14,6 +13,7 @@
 import { useRouter } from "vue-router";
 import axios from "axios";
 import AsyncCityView from "../components/AsyncCityView.vue";
+import CityViewSkeleton from "../components/CityViewSkeleton.vue";
 
 // const route = useRouter();
 </script>
